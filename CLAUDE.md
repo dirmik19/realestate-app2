@@ -48,6 +48,11 @@
 - ビルド: `npm run build`
 - テスト実行: 未整備
 
+## デプロイ（Vercel）
+
+- `vercel.json` で、どの URL にアクセスされても `index.html` を返すように設定している（React Router の画面を直接開いても 404 にならないようにするため）。
+- 環境変数（`VITE_SUPABASE_URL`、`VITE_SUPABASE_PUBLISHABLE_KEY`）は Vercel ダッシュボードで設定する。`vercel.json` には書かない。
+
 ## Git運用ルール
 
 - **コードを変更するたびに、コミットして GitHub にプッシュすること。**
