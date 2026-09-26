@@ -5,7 +5,7 @@
 ## プロジェクト概要
 
 - **プロジェクト名**: realestate-app
-- **概要**: Supabase 認証付きの不動産管理 Web アプリ。ログインすると物件一覧（現在はダミーデータ）を表示する。
+- **概要**: Supabase 認証付きの不動産管理 Web アプリ。ログインすると自分が登録した物件を一覧・登録・編集・削除できる。
 
 ## コミュニケーション
 
@@ -30,8 +30,16 @@
 - `src/lib/supabaseClient.js` … Supabase クライアント
 - `src/contexts/AuthContext.jsx` … ログイン状態の共有（`useAuth` フック）
 - `src/components/ProtectedRoute.jsx` … 未ログイン時にログイン画面へリダイレクトする処理
+- `src/lib/propertiesApi.js` … 物件テーブルの CRUD 処理
+- `src/components/PropertyForm.jsx` … 物件の入力フォーム（新規登録・編集で共用）
 - `src/pages/` … 各画面（ログイン、会員登録、物件一覧）
-- `src/data/properties.js` … 物件のダミーデータ
+- `supabase/schema.sql` … テーブル・RLS ポリシーの定義（Supabase の SQL Editor で実行する）
+
+## データベース
+
+- `properties` テーブル：物件名（name）、家賃（rent）、エリア名（area）、間取り（layout）、登録者（user_id）
+- RLS 有効。自分が登録した物件のみ表示・登録・編集・削除できる。
+- スキーマを変更したら `supabase/schema.sql` も更新すること。
 
 ## 開発コマンド
 

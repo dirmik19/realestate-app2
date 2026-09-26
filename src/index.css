@@ -151,3 +151,81 @@ button:disabled {
   color: #555;
   font-size: 14px;
 }
+
+/* ボタンのバリエーション */
+button.secondary {
+  background: #e5e7eb;
+  color: #222;
+}
+
+button.secondary:hover {
+  background: #d1d5db;
+}
+
+button.danger {
+  background: #dc2626;
+}
+
+button.danger:hover {
+  background: #b91c1c;
+}
+
+/* 物件登録パネル */
+.panel {
+  margin-bottom: 24px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.panel h2 {
+  margin: 0 0 16px;
+  font-size: 18px;
+}
+
+/* 物件フォーム（新規登録・編集共通） */
+.property-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  align-items: end;
+}
+
+.property-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.property-form input {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.property-form .message {
+  grid-column: 1 / -1;
+}
+
+.form-actions,
+.card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.card-actions {
+  margin-top: 12px;
+}
+
+/* カード内の編集フォームは縦1列にする */
+.card .property-form {
+  grid-template-columns: 1fr;
+}
+
+.empty {
+  text-align: center;
+  color: #555;
+}
